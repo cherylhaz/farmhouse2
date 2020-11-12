@@ -3,11 +3,12 @@ html {
 }
 /* from Boutique Ado Project */
 body {
-    background: url('/media/fe_cover_photo.jpg') no-repeat center center fixed;
+    background: url('/media/fecoverphoto.jpg') no-repeat center center fixed;
     background-size: cover;
     height: calc(100vh - 164px);
     color: #555;
     font-family: 'Montserrat', sans-serif;
+    max-width: 100%;
 }
 
 /* from Bulma */
@@ -28,13 +29,13 @@ body {
 }
 
 .shop-button {
-    background: black;
+    background: #5e0000;
     color: white;
     min-width: 260px;
 }
 
 .btn-black {
-    background: black;
+    background:#5e0000;
     color: white;
 }
 
@@ -44,16 +45,16 @@ body {
 .btn-black:hover,
 .btn-black:active,
 .btn-black:focus {
-    background: #222;
+    background: #380000;
     color: white;
 }
 
 .text-black {
-    color: #000 !important;
+    color: #5e0000 !important;
 }
 
 .border-black {
-    border: 1px solid black !important;
+    border: 1px solid #5e0000 !important;
 }
 
 /* -------------------------------- Media Queries */
