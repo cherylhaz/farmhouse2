@@ -57,6 +57,15 @@ body {
     border: 1px solid #5e0000 !important;
 }
 
+.overlay {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background: #e2fff1;
+    z-index: -1;
+}
 
 /* -------------------------------- Media Queries */
 
