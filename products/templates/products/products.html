@@ -41,7 +41,11 @@
                                 <div class="card-footer bg-white pt-0 border-0 text-left">
                                     <div class="row">
                                         <div class="col">
+                                        {% if product.quantity >= 1%}
                                             <p class="lead mb-0 text-left font-weight-bold">${{ product.price }}</p>
+                                        {% else %}
+                                            <p class="lead mb-0 text-left font-weight-bold sold-text">Sold</p>
+                                        {% endif %}
                                         </div>
                                     </div>
                                 </div>
