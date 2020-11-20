@@ -1,18 +1,17 @@
-from django.shortcuts import render
-from .models import Product, Category, SubCategory
+from django.shortcuts import render, redirect, reverse, get_object_or_404
+from .models import Product, Category
 
 
 def all_products(request):
     """ A view to return the product page """
     products = Product.objects.all()
-    categories= None
-    sub_categories= None
+    categories = None
 
     if request.GET:
-        if sub_category in request.GET:
-            sub_categories = request.GET['sub_category'].split[',']
-            products = products.filter(sub_category__name__in=sub_categories)
-            sub_categories = SubCategory.objects.filter(name__in=sub_categories)
+        if 'category' in request.GET:
+            categories = request.GET['category'].split(',')
+            products = products.filter(category__name__in=categories)
+            categories = Category.objects.filter(name__in=categories)
 
     context = {
         'products': products,

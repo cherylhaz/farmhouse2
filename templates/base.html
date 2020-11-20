@@ -48,13 +48,13 @@
                 Vintage
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="all-vintage">
-                <a href="{url 'products' %}?sub_category=kitchen" class="dropdown-item">Kitchen</a>
-                <a href="{url 'products' %}?sub_category=bedroom" class="dropdown-item ">Bedroom</a>
-                <a href="{url 'products' %}?sub_category=decor" class="dropdown-item ">Decor</a>
-                <a href="{url 'products' %}?sub_category=art" class="dropdown-item">Art</a>
-                <a href="{url 'products' %}?sub_category=music" class="dropdown-item">Music</a>
-                <a href="{url 'products' %}?sub_category=jewellery" class="dropdown-item">Jewellery</a>
-                <a href="{url 'products' %}?sub_category=kitchen,bedroom,decor,art,music,jewellery" class="dropdown-item">All Vintage</a>
+                <a href="{% url 'products' %}?category=kitchen" class="dropdown-item">Kitchen</a>
+                <a href="{% url 'products' %}?category=bedroom" class="dropdown-item ">Bedroom</a>
+                <a href="{% url 'products' %}?category=decor" class="dropdown-item ">Decor</a>
+                <a href="{% url 'products' %}?category=art" class="dropdown-item">Art</a>
+                <a href="{% url 'products' %}?category=music" class="dropdown-item">Music</a>
+                <a href="{% url 'products' %}?category=jewellery" class="dropdown-item">Jewellery</a>
+                <a href="{% url 'products' %}?category=kitchen,bedroom,decor,art,music,jewellery" class="dropdown-item">All Vintage</a>
             </div>
         </li>
 
@@ -63,12 +63,12 @@
                 Handmade
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="all-handmade">
-                <a href="{url 'products' %}?sub_category=flowers" class="dropdown-item">Flowers</a>
-                <a href="{url 'products' %}?sub_category=banners" class="dropdown-item">Banners</a>
-                <a href="{url 'products' %}?sub_category=dishcloths" class="dropdown-item">Dishcloths</a>
-                <a href="{url 'products' %}?sub_category=blankets" class="dropdown-item">Blankets</a>
-                <a href="{url 'products' %}?sub_category=other" class="dropdown-item">Other</a>
-                <a href="{url 'products' %}?sub_category=flowers,banners,dishcloths,blankets,other" class="dropdown-item">All Handmade</a>
+                <a href="{url 'products' %}?category=flowers" class="dropdown-item">Flowers</a>
+                <a href="{url 'products' %}?category=banners" class="dropdown-item">Banners</a>
+                <a href="{url 'products' %}?category=dishcloths" class="dropdown-item">Dishcloths</a>
+                <a href="{url 'products' %}?category=blankets" class="dropdown-item">Blankets</a>
+                <a href="{url 'products' %}?category=other" class="dropdown-item">Other</a>
+                <a href="{url 'products' %}?category=flowers,banners,dishcloths,blankets,other" class="dropdown-item">All Handmade</a>
             </div>
         </li>
         <li class="nav-item dropdown">
