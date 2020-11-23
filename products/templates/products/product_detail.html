@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block extra_css %}
+     <link rel="stylesheet" href="../static/css/base.css">
+{% endblock %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+{% block content %}
+<div class="overlay"></div>
+    <div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-6 offset-2">
+            {% if product.image %}               
+                 <img class="product-image" src="{{ product.image.url }}" alt="{{ product.name }}">
+            {% else %}
+                <img class="card-img-top img-fluid" src="../media/image_coming_soon.png" alt="{{ product.name }}">
+            {% endif %}
+        </div>
+        <div class="col-lg-12">
+            <h2 class="mb-0">{{ product.name }}</h2><br>
+            <p class="mb-0">{{ product.description }}</p>
+        {% if product.quantity >= 1%}
+            <p class="lead mb-0 text-left font-weight-bold">${{ product.price }}</p>
+        {% else %}
+            <p class="lead mb-0 text-left font-weight-bold sold-text">Sold</p>
+        {% endif %}
+            <p class="mb-0">Quantity available: {{ product.quantity}}</p>
+            <p class="mb-0">Shipping Weight: {{ product.weight}}</p>
+    </div>
+    </div>
+    
+{% endblock %}

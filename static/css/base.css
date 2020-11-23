@@ -73,6 +73,9 @@ body {
     font-weight: bold;
 }
 
+.product-image {
+    max-width: 400px;
+}
 
 /* -------------------------------- Media Queries */
 
