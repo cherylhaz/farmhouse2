@@ -34,48 +34,82 @@
   </head>
 <body>
 <header>
-<nav class="navbar navbar-expand-sm shop-button">
-  <a class="navbar-brand" src="./media/logo.png" href="#">Farmhouse Emporium</a>
+<nav class="navbar fixed-top navbar-expand-lg my-navbar">
 
-  <!-- Links -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+<a href="{% url 'home' %}">
+<img src="../media/logo.png" width="80" height="80" alt="Farmhouse Emporium Logo" >
+</a>
+
   <ul class="navbar-nav">
-    <li class="nav-item logo-font">
-      <a class="nav-link" href="#">About Us</a>
+    <li class="nav-item">
+      <a class="nav-link nav-title" href="#">About Us</a>
     </li>
 
-
-    <!-- Dropdown -->
     <li class="nav-item dropdown logo-font">
-      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+      <a class="nav-link dropdown-toggle nav-title" href="#" id="navbardrop" data-toggle="dropdown">
         Shop Vintage
       </a>
-      <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">Link 1</a>
-        <a class="dropdown-item" href="#">Link 2</a>
-        <a class="dropdown-item" href="#">Link 3</a>
-      </div>
+       <div class="dropdown-menu">
+      <a href="{% url 'products' %}?category=kitchen" class="dropdown-item">Kitchen</a>
+        <a href="{% url 'products' %}?category=bedroom" class="dropdown-item ">Bedroom</a>
+                        <a href="{% url 'products' %}?category=decor" class="dropdown-item ">Decor</a>
+                        <a href="{% url 'products' %}?category=art" class="dropdown-item">Art</a>
+                        <a href="{% url 'products' %}?category=music" class="dropdown-item">Music</a>
+                        <a href="{% url 'products' %}?category=jewellery" class="dropdown-item">Jewellery</a>
+                        <a href="{% url 'products' %}?category=kitchen,bedroom,decor,art,music,jewellery" class="dropdown-item">All Vintage</a>
+
     </li>
         <li class="nav-item dropdown logo-font">
-      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+      <a class="nav-link dropdown-toggle nav-title" href="#" id="navbardrop" data-toggle="dropdown">
         Shop Handmade
       </a>
       <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">Link 1</a>
-        <a class="dropdown-item" href="#">Link 2</a>
-        <a class="dropdown-item" href="#">Link 3</a>
+        <a href="{% url 'products' %}?category=flowers" class="dropdown-item">Flowers</a>
+                        <a href="{% url 'products' %}?category=banners" class="dropdown-item">Banners</a>
+                        <a href="{% url 'products' %}?category=dishcloths" class="dropdown-item">Dishcloths</a>
+                        <a href="{% url 'products' %}?category=blankets" class="dropdown-item">Blankets</a>
+                        <a href="{% url 'products' %}?category=other" class="dropdown-item">Other</a>
+                        <a href="{% url 'products' %}?category=flowers,banners,dishcloths,blankets,other" class="dropdown-item">All Handmade</a>
+
       </div>
     </li>
-          <li class="nav-item dropdown logo-font">
-      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+    <li class="nav-item dropdown logo-font">
+      <a class="nav-link dropdown-toggle nav-title" href="#" id="navbardrop" data-toggle="dropdown">
         My Account
       </a>
       <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">Link 1</a>
-        <a class="dropdown-item" href="#">Link 2</a>
-        <a class="dropdown-item" href="#">Link 3</a>
+        {% if request.user.is_authenticated %}
+            {% if request.user.is_superuser %}
+                <a href="{% url 'account_logout' %}" class="dropdown-item">Product Management</a>
+            {% endif %}
+            <a href="" class="dropdown-item">My Profile</a>
+            <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+        {% else %}
+            <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+            <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+        {% endif %}
       </div>
     </li>
+    <li class="nav-item logo-font">
+    <a class="nav-link nav-title" href="">
+            
+            <p class="my-0">
+            Shopping Cart:
+                {% if grand_total %}
+                    ${{ grand_total|floatformat:2 }}
+                {% else %}
+                    $0.00
+                {% endif %}
+            </p>
+    </a>
+</li>
+
   </ul>
+  </div>
 </nav>
     </header>
 
