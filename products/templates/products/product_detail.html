@@ -14,14 +14,14 @@
 <div class="overlay"></div>
     <div class="container-fluid">
     <div class="row">
-        <div class="col-lg-6 offset-2">
+        <div class="col offset-xl-2">
             {% if product.image %}               
                  <img class="product-image" src="{{ product.image.url }}" alt="{{ product.name }}">
             {% else %}
                 <img class="card-img-top img-fluid" src="../media/image_coming_soon.png" alt="{{ product.name }}">
             {% endif %}
         </div>
-        <div class="col-lg-12">
+        <div class="col">
             <h2 class="mb-0">{{ product.name }}</h2><br>
             <p class="mb-0">{{ product.description }}</p>
         {% if product.quantity >= 1%}
