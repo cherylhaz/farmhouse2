@@ -5,7 +5,7 @@ html {
 .my-navbar {
     background-color: white;
 }
-/* from Boutique Ado Project */
+/* from Boutique Ado Project 
 body {
     background: url('/media/fecover.jpg') no-repeat center center fixed;
     background-size: cover;
@@ -14,11 +14,16 @@ body {
     font-family: 'Montserrat', sans-serif;
     max-width: 100%;
 }
-
+*/
 #my-nav-icon {
     background: #5e0000 !important;
     color: white !important;
    
+}
+
+.home-picture img { 
+    max-width: 100%;
+    max-height: 100vh;
 }
 
 .logo-font {
